@@ -1,3 +1,3 @@
 export const COLOR = {
-    orange: "#fa8231"
+    orange: "#FE724C"
 }

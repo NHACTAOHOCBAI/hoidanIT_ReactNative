@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View } from "react-native"
+import CustomButton from "../components/button/CustomButton"
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -52,7 +53,12 @@ const WelcomePage = () => {
                     <Text>sign in with</Text>
                 </View>
                 <View>
-                    <View>
+                    <CustomButton
+                        title="faceBook"
+                        textStyle={{ textTransform: "uppercase" }}
+                        btnStyle={{ width: "auto", alignSelf: "flex-start" }}
+                    />
+                    {/* <View>
                         <Text> FACEBOOK</Text>
                     </View>
                     <View>
@@ -60,7 +66,7 @@ const WelcomePage = () => {
                     </View>
                     <View>
                         <Text>Start with your email</Text>
-                    </View>
+                    </View> */}
                 </View>
                 <View>
                     <Text>Already have an account? Sign in</Text>

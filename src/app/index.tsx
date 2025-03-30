@@ -1,23 +1,25 @@
-import { StyleSheet, Text, View } from "react-native"
-import CustomButton from "../components/button/CustomButton"
+import { Image, ImageBackground, StyleSheet, Text, View } from "react-native"
+
+import { COLOR } from "@/utils/colorConst"
+import CustomButton from "@/components/button/CustomButton"
+
+import bg from '@/assets/auth/welcome-background.png'
+import fbLogo from '@/assets/auth/facebook.png'
+import ggLogo from '@/assets/auth/google.png'
+import { LinearGradient } from "expo-linear-gradient";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        borderColor: "red",
-        borderWidth: 5,
     },
     welcomeText: {
-        flex: 0.6,
-        borderColor: "green",
-        borderWidth: 5,
+        flex: 0.7,
         justifyContent: "center",
         alignItems: "flex-start",
-        paddingHorizontal: 10
+        paddingHorizontal: 20
     },
     welcomeButton: {
-        flex: 0.4,
-        borderColor: "yellow",
-        borderWidth: 5,
+        flex: 0.3,
+        gap: 20
     },
     welcomeFirst: {
         fontSize: 40,
@@ -26,53 +28,105 @@ const styles = StyleSheet.create({
     },
     welcomeSecond: {
         fontSize: 40,
-        color: "orange",
+        color: COLOR.orange,
         fontWeight: "bold"
     },
     welcomeThird: {
         fontSize: 18,
-        color: 'black',
+        color: '#30384F',
+        width: 250
     }
 })
 const WelcomePage = () => {
     return (
-        <View style={styles.container}>
-            <View style={styles.welcomeText}>
-                <Text style={styles.welcomeFirst}>
-                    Welcome to
-                </Text>
-                <Text style={styles.welcomeSecond}>
-                    FuckHub
-                </Text>
-                <Text style={styles.welcomeThird}>
-                    Your favorite foods delivered fast at your door
-                </Text>
-            </View>
-            <View style={styles.welcomeButton}>
-                <View>
-                    <Text>sign in with</Text>
-                </View>
-                <View>
-                    <CustomButton
-                        title="faceBook"
-                        textStyle={{ textTransform: "uppercase" }}
-                        btnStyle={{ width: "auto", alignSelf: "flex-start" }}
-                    />
-                    {/* <View>
-                        <Text> FACEBOOK</Text>
+        <ImageBackground source={bg} style={{
+            flex: 1
+        }}>
+            <LinearGradient style={{
+                flex: 1
+            }}
+                colors={['transparent', '#191B2F']}
+                locations={[0.2, 0.9]}
+            >
+                <View style={styles.container}>
+                    <View style={styles.welcomeText}>
+                        <Text style={styles.welcomeFirst}>
+                            Welcome to
+                        </Text>
+                        <Text style={styles.welcomeSecond}>
+                            FuckHub
+                        </Text>
+                        <Text style={styles.welcomeThird}>
+                            Your favorite foods delivered fast at your door
+                        </Text>
                     </View>
-                    <View>
-                        <Text> GOOGLE</Text>
+                    <View style={styles.welcomeButton}>
+                        <View style={{
+                            alignItems: 'center',
+                            flexDirection: 'row',
+                            justifyContent: "space-evenly",
+                            marginHorizontal: 10
+                        }} >
+                            <View style={{ width: 89, height: 1, backgroundColor: "white" }} />
+                            <Text style={{
+                                fontSize: 16,
+                                fontWeight: 400,
+                                color: 'white'
+                            }}>sign in with</Text>
+                            <View style={{ width: 89, height: 1, backgroundColor: "white" }} />
+                        </View>
+                        <View style={{
+                            flexDirection: "row",
+                            justifyContent: "space-around",
+                        }}>
+                            <CustomButton
+                                title="facebook"
+                                icon={<Image source={fbLogo} />}
+                                textStyle={{ textTransform: "uppercase", fontSize: 13, fontWeight: 500 }}
+                                btnStyle={{
+                                    width: 130,
+                                    backgroundColor: "white",
+                                    paddingLeft: 10,
+                                }}
+                            />
+                            <CustomButton
+                                title="Google"
+                                icon={<Image source={ggLogo} />}
+                                textStyle={{ textTransform: "uppercase", fontSize: 13, fontWeight: 500 }}
+                                btnStyle={{
+                                    width: 130, backgroundColor: "white",
+                                    paddingLeft: 10,
+                                }}
+                            />
+                        </View>
+                        <View style={{
+                            alignItems: 'center',
+                        }}>
+                            <CustomButton
+                                title="Start with your email"
+
+                                textStyle={{ fontSize: 17, fontWeight: 500, color: "white" }}
+                                btnStyle={{
+                                    width: 324, backgroundColor: 'rgba(253, 253, 253, 0.2)',
+                                    paddingLeft: 10,
+                                    borderWidth: 1,
+                                    borderColor: "white"
+                                }}
+                            />
+                        </View>
+                        <View style={{
+                            alignItems: 'center',
+                        }}>
+                            <Text style={{
+                                fontSize: 16,
+                                fontWeight: 400,
+                                color: "white"
+                            }}>Already have an account? Sign in</Text>
+                        </View>
                     </View>
-                    <View>
-                        <Text>Start with your email</Text>
-                    </View> */}
                 </View>
-                <View>
-                    <Text>Already have an account? Sign in</Text>
-                </View>
-            </View>
-        </View>
+            </LinearGradient>
+        </ImageBackground>
     )
 }
 export default WelcomePage

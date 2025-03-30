@@ -4,14 +4,17 @@ const styles = StyleSheet.create({
     btnContainter: {
         flexDirection: "row",
         backgroundColor: "orange",
-        borderRadius: 17,
+        borderRadius: 30,
         paddingVertical: 10,
         paddingHorizontal: 20,
-        gap: 5,
+        gap: 10,
         alignSelf: 'flex-start',
-        justifyContent: 'center'
+        justifyContent: 'space-around',
+        height: 54,
+        alignItems: 'center'
     },
     btnText: {
+        verticalAlign: "middle"
     }
 })
 interface IProp {

@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-start',
         justifyContent: 'space-around',
         height: 54,
-        alignItems: 'center'
+        alignItems: 'center',
+        elevation: 5,
     },
     btnText: {
         verticalAlign: "middle"

@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     },
     welcomeButton: {
         flex: 0.3,
-        gap: 20
     },
     welcomeFirst: {
         fontSize: 40,
@@ -67,6 +66,7 @@ const WelcomePage = () => {
                         <SocialSignup />
                         <View style={{
                             alignItems: 'center',
+                            marginBottom: 20
                         }}>
                             <CustomButton
                                 title="Start with your email"

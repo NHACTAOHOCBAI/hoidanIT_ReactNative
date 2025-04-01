@@ -24,4 +24,13 @@ const verifyAPI = async (data: string) => {
     }
     return 'OTP is correct'
 }
-export { registerAPI, verifyAPI }
+const LoginAPI = async (data: IRegister) => {
+    const { email, password } = data;
+    await delay(2000);
+    if (email === 'admin@gmail.com' && password === '123456')
+        return 1;
+    if (email === 'user@gmail.com' && password === '123456')
+        return 0;
+    return -1;
+}
+export { registerAPI, verifyAPI, LoginAPI }

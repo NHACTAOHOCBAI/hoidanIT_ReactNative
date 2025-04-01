@@ -6,7 +6,7 @@ import { COLOR } from "@/utils/colorConst";
 import SocialSignup from "@/components/button/SocialSignup";
 import { registerAPI } from "@/services/account";
 import Toast from "react-native-root-toast";
-import { useNavigation } from "expo-router";
+import { Link, useNavigation } from "expo-router";
 
 const SignUpPage = () => {
     const [fullName, setFullName] = useState("");
@@ -76,7 +76,9 @@ const SignUpPage = () => {
                         fontWeight: "500"
                     }}>
                         Already have an account?
-                        <Text style={{ color: COLOR.orange }}> Login</Text>
+                        <Link href={"/(auth)/sign-in"}>
+                            <Text style={{ color: COLOR.orange }}> Login</Text>
+                        </Link>
                     </Text>
                 </View>
                 <View style={{

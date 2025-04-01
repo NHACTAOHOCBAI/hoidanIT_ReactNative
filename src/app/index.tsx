@@ -1,4 +1,4 @@
-import { Image, ImageBackground, StyleSheet, Text, View } from "react-native"
+import { ImageBackground, SafeAreaView, StyleSheet, Text, View } from "react-native"
 
 import { COLOR } from "@/utils/colorConst"
 import CustomButton from "@/components/button/CustomButton"
@@ -37,8 +37,11 @@ const styles = StyleSheet.create({
     }
 })
 const WelcomePage = () => {
+    return (
+        <Redirect href={"/(auth)/verify"} />
+    )
     // return (
-    //     <Redirect href={"/(auth)/SignUp"} />
+    //     <Redirect href={"/(auth)/sign-up"} />
     // )
     return (
         <ImageBackground source={bg} style={{
@@ -83,7 +86,7 @@ const WelcomePage = () => {
                         <View style={{
                             alignItems: 'center',
                         }}>
-                            <Link href={"/(auth)/SignUp"}>
+                            <Link href={"/(auth)/sign-up"}>
                                 <Text style={{
                                     fontSize: 16,
                                     fontWeight: 400,
